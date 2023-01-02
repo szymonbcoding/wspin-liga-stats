@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blokline</title>
+<link href="/Content/css?v=Gw0XGl6IvyO-s6N9kGLzoFLyqSMo94bImJSL2tq1zXM1" rel="stylesheet"/>
+<script src="/bundles/modernizr?v=wBEWDufH_8Md-Pbioxomt90vm6tJN2Pyy9u9zHtWsPo1"></script>
+<!-- cdn for modernizr, if you haven't included it already -->
+<script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
+<!-- polyfiller file to detect and load polyfills -->
+<script src="http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js"></script>
+<script>
+  webshims.setOptions('waitReady', false);
+  webshims.setOptions('forms-ext', {types: 'date'});
+  webshims.polyfill('forms forms-ext');
+    </script>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="container">
+<div class="navbar-header">
+<button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="/">Blokline LIGA<span class=""></span></a>
+</div>
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav">
+<li><a href="/Routes">Lista dróg</a></li>
+<li><a href="/Routes/Difficulties">Trudności</a></li>
+<li>
+<a href="/Home/Ranking">Ranking</a></li>
+<li><a href="/Results">Wyniki</a></li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li><a href="/Account/Register" id="registerLink">Rejestracja</a></li>
+<li><a href="/Account/Login" id="loginLink">Logowanie</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="container body-content">
+<h2>Ranking - NOWOROCZNA LIGA WSPINACZKOWA</h2>
+<p>Data zakończenia: 2023-01-28</p>
+<p>Ilość dróg: 0</p>
+<div class="table-responsive">
+<table class="table table-striped">
+<tr>
+<th>Miejsce</th>
+<th>Nazwisko</th>
+<th>Imie</th>
+<th>Razem</th>
+<th></th>
+</tr>
+</table>
+</div>
+<hr/>
+<footer>
+<p>© 2023 Blokline Sp. z o.o.</p>
+</footer>
+</div>
+<script src="/bundles/jquery?v=FVs3ACwOLIVInrAl5sdzR2jrCDmVOWFbZMY6g6Q0ulE1"></script>
+<script src="/bundles/bootstrap?v=2Fz3B0iizV2NnnamQFrx-NbYJNTFeBJ2GM05SilbtQU1"></script>
+</body>
+</html>
