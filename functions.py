@@ -45,6 +45,6 @@ if __name__ == '__main__':
 
     a = get_samples_rectangular_growth(0,100)
 
-    # a = get_samples_rectangular_growth(0, 100)
+    a = get_samples_rectangular_growth(0, 0)
     print(a)
     print(len(a))
