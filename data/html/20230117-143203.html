@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blokline</title>
+<link href="/Content/css?v=Gw0XGl6IvyO-s6N9kGLzoFLyqSMo94bImJSL2tq1zXM1" rel="stylesheet"/>
+<script src="/bundles/modernizr?v=wBEWDufH_8Md-Pbioxomt90vm6tJN2Pyy9u9zHtWsPo1"></script>
+<!-- cdn for modernizr, if you haven't included it already -->
+<script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
+<!-- polyfiller file to detect and load polyfills -->
+<script src="http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js"></script>
+<script>
+  webshims.setOptions('waitReady', false);
+  webshims.setOptions('forms-ext', {types: 'date'});
+  webshims.polyfill('forms forms-ext');
+    </script>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="container">
+<div class="navbar-header">
+<button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="/">Blokline LIGA<span class=""></span></a>
+</div>
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav">
+<li><a href="/Routes">Lista dróg</a></li>
+<li><a href="/Routes/Difficulties">Trudności</a></li>
+<li>
+<a href="/Home/Ranking">Ranking</a></li>
+<li><a href="/Results/Index/8">Wyniki</a></li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li><a href="/Account/Register" id="registerLink">Rejestracja</a></li>
+<li><a href="/Account/Login" id="loginLink">Logowanie</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="container body-content">
+<style>
+tr th:first-child {
+width: 0;
+}
+tr th:nth-child(2), tr td:nth-child(2){
+max-width: 80px !important;
+}
+</style>
+<h2>Ranking - NOWOROCZNA LIGA WSPINACZKOWA</h2>
+<p>Data zakończenia: 2023-01-28</p>
+<p>Ilość dróg wspinaczkowych: 50</p>
+<div class="table-responsive">
+<h2>Mężczyźni</h2>
+<table class="table table-striped">
+<tr>
+<th>Miejsce</th>
+<th>Nazwisko</th>
+<th>Imie</th>
+<th>Razem</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Gajewy</td>
+<td>Kacper</td>
+<td>93</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Ratajczyk</td>
+<td>Dawid</td>
+<td>89</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Balawajder</td>
+<td>Szymon</td>
+<td>83</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Surowiecki</td>
+<td>Łukasz</td>
+<td>75</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Drgas</td>
+<td>Tomasz</td>
+<td>70</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Jachimczyk</td>
+<td>Wojtek</td>
+<td>70</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Kowalik</td>
+<td>Tomasz</td>
+<td>66</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Wilkowski</td>
+<td>Adrian</td>
+<td>66</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Stawiński</td>
+<td>Jan</td>
+<td>60</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Sienkiewicz</td>
+<td>Tomasz</td>
+<td>60</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Staszak</td>
+<td>Marcin</td>
+<td>58</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Grygowski</td>
+<td>Szymon</td>
+<td>57</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Milewski</td>
+<td>Sebastian</td>
+<td>57</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Lewandowski</td>
+<td>Michał</td>
+<td>54</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Tomczyk</td>
+<td>Tomek</td>
+<td>50</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Nowacki</td>
+<td>Bartosz</td>
+<td>47</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Michalski </td>
+<td>Dariusz </td>
+<td>46</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Staniewski</td>
+<td>Wojciech</td>
+<td>44</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Gruch</td>
+<td>Andrzej</td>
+<td>39</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Masztal</td>
+<td>Michal</td>
+<td>39</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Szal</td>
+<td>Bartłomiej</td>
+<td>39</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Wolski</td>
+<td>Michał</td>
+<td>38</td>
+</tr>
+<tr>
+<td>23</td>
+<td>mikolajczak</td>
+<td>piotr</td>
+<td>37</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Stempniak</td>
+<td>Maciej</td>
+<td>34</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Kolodziejski</td>
+<td>Piotr</td>
+<td>32</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Filipiak</td>
+<td>Jakub</td>
+<td>32</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Gólski</td>
+<td>Michał</td>
+<td>31</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Danielak</td>
+<td>Maciej</td>
+<td>30</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Płatek </td>
+<td>Dominik </td>
+<td>28</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Bibik</td>
+<td>Andrzej</td>
+<td>27</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Raczak</td>
+<td>Maciej</td>
+<td>20</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Kaźmierski</td>
+<td>Kamil</td>
+<td>20</td>
+</tr>
+<tr>
+<td>33</td>
+<td>Gulbicki</td>
+<td>Dawid</td>
+<td>19</td>
+</tr>
+<tr>
+<td>34</td>
+<td>Szachta</td>
+<td>Piotr </td>
+<td>18</td>
+</tr>
+<tr>
+<td>35</td>
+<td>Wolny</td>
+<td>Mateusz</td>
+<td>18</td>
+</tr>
+<tr>
+<td>36</td>
+<td>Wiśniewski</td>
+<td>Mateusz</td>
+<td>16</td>
+</tr>
+<tr>
+<td>37</td>
+<td>Kajewski</td>
+<td>Rafał</td>
+<td>1</td>
+</tr>
+</table>
+<h2>Kobiety</h2>
+<table class="table table-striped">
+<tr>
+<th>Miejsce</th>
+<th>Nazwisko</th>
+<th>Imie</th>
+<th>Razem</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Drwęska-Michalska</td>
+<td>Julia</td>
+<td>76</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Nowacka</td>
+<td>Jagoda</td>
+<td>61</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Jarosz</td>
+<td>Natalia </td>
+<td>60</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Struzik</td>
+<td>Sara</td>
+<td>53</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Kuropaczewska</td>
+<td>Wiktoria</td>
+<td>50</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Matyjaszczyk </td>
+<td>Dominika</td>
+<td>50</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Woj</td>
+<td>Barbara</td>
+<td>46</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Kita</td>
+<td>Natalia</td>
+<td>43</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Murzicz</td>
+<td>Dżemila</td>
+<td>41</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Rogala</td>
+<td>Ania</td>
+<td>39</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Jacek</td>
+<td>Jolanta</td>
+<td>38</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Ignasiak</td>
+<td>Marianna</td>
+<td>28</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Zylka</td>
+<td>Nicol</td>
+<td>25</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Brykner</td>
+<td>Maria</td>
+<td>24</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Ratajczyk</td>
+<td>Paulina</td>
+<td>16</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Łojek</td>
+<td>Katarzyna</td>
+<td>13</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Bartoszewska</td>
+<td>Patrycja</td>
+<td>12</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Profaska</td>
+<td>Ewa</td>
+<td>11</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Nawrocka-Rohnka </td>
+<td>Joanna </td>
+<td>10</td>
+</tr>
+</table>
+</div>
+<hr/>
+<footer>
+<p>© 2023 Blokline Sp. z o.o.</p>
+</footer>
+</div>
+<script src="/bundles/jquery?v=FVs3ACwOLIVInrAl5sdzR2jrCDmVOWFbZMY6g6Q0ulE1"></script>
+<script src="/bundles/bootstrap?v=2Fz3B0iizV2NnnamQFrx-NbYJNTFeBJ2GM05SilbtQU1"></script>
+</body>
+</html>
