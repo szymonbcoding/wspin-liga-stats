@@ -36,13 +36,9 @@ def get_samples_rectangular_growth(start_sample: int, stop_sample: int):
     overall_growth: int = stop_sample - start_sample
     gradual_growth: float = overall_growth / FRAMES_PER_SECOND
 
-    growth_list = np.fromiter((round(start_sample + x * gradual_growth, 2) for x in range(FRAMES_PER_SECOND)), float)
+    # growth_list = np.fromiter((round(start_sample + x * gradual_growth, 2) for x in range(FRAMES_PER_SECOND)), float)
+    growth_list = [round(start_sample + x * gradual_growth, 2) for x in range(FRAMES_PER_SECOND)]
     return growth_list
 
 if __name__ == '__main__':
-
-    a = get_samples_rectangular_growth(0,100)
-
-    a = get_samples_rectangular_growth(0, 0)
-    print(a)
-    print(len(a))
+    pass

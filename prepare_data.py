@@ -6,11 +6,11 @@ import os, glob
 from bs4 import BeautifulSoup 
 import pandas as pd
 
-from algorithms import get_samples_step_function
+from algorithms import get_samples_rectangular_growth
 
 def open_html_file(path: str):
     """
-    Returns soup.
+    Returns soup. Help yourself.
     """
     with open(path) as f:
         #read File
@@ -21,17 +21,14 @@ def open_html_file(path: str):
         
         return soup, daytime
 
-def create_csv_from_soup(soup, daytime):
+def create_csv_from_soup(soup, daytime: str):
     tables = soup.findAll("table")
-    print(tables)
     for index, table in enumerate(tables):
         elements = table.findAll("td")
         big_list = []
         
-        print(elements)
         no_samples = int(len(elements)/4)
-        print(len(elements))
-        print(no_samples)
+
         for x in range(no_samples):
             new_list = [f"{elements[2+x*4].text} {elements[1+x*4].text}",  elements[3+x*4].text]
             big_list.append(new_list)
@@ -69,7 +66,6 @@ def get_list_of_points_for_athlete(athlete_name: str, male: bool, max_value: int
 
     points_list = []
     
-    max_value = 27 #finally should be 29
     for x in range(4, max_value):
         if(x<10):
             filename = f"data/csv/{sex}0{x}.csv"
@@ -91,40 +87,45 @@ def estimate_transitional_values(values_list: list):
             break
         start_value = values_list[index]
         stop_value = values_list[index+1]
-        huge_values_list.extend(get_samples_step_function(start_sample=start_value, stop_sample=stop_value))
+        new_list = get_samples_rectangular_growth(start_sample=start_value, stop_sample=stop_value)
+        huge_values_list.extend(new_list)
         
     huge_values_list.append(values_list[-1])
     return huge_values_list
+
+def generate_datetime_list(start_time, end_time):
+    return pd.date_range(start=start_time, end=end_time, freq='H')
     
-    
+def convert_html2csv():
+    path = 'data/html/'
+    for filename in glob.glob(os.path.join(path, '*.html')):
+        soup, daytime = open_html_file(filename)
+        create_csv_from_soup(soup, daytime)
+
+def create_main_csv(male: bool, max_value: int):
+    unique_names = get_unique_list_of_names(male, max_value)
+
+    my_dict = { name : estimate_transitional_values(get_list_of_points_for_athlete(name, male,max_value)) for name in unique_names }
+    df = pd.DataFrame(my_dict)
+    df['time'] = generate_datetime_list('2023-01-04 14:00:00', '2023-01-28 14:00:00')
+    df_i = df.set_index('time')
+    if(male):
+        df_i.to_csv("data/main_csv/m.csv", index=False)
+    else:
+        df_i.to_csv("data/main_csv/f.csv", index=False)
+
 
 if __name__ == '__main__':
 
-    M_UNIQUE_NAMES = get_unique_list_of_names(True, 27)
-    F_UNIQUE_NAMES = get_unique_list_of_names(False, 27)
 
     # convert data from html files to csv files
-    # path = 'data/html/'
-    # for filename in glob.glob(os.path.join(path, '*.html')):
-    #     soup, daytime = open_html_file(filename)
-    #     create_csv_from_soup(soup, daytime)
+    convert_html2csv()
+    
+    
+    # use small csv files (per day) to create main csv
+    create_main_csv(True, 29)
+    create_main_csv(False, 29)
 
-    # get list of unique female and male athletes
-    print(len(M_UNIQUE_NAMES))
-    print(len(F_UNIQUE_NAMES))
-
-    # df = pd.DataFrame(big_list, columns=['Name', 'Points'])
-    # df.to_csv(f'data/csv/m{daytime}.csv', index_label='Id')
-
-    # male_dict = { name : estimate_transitional_values(get_list_of_points_for_athlete(name, True,27)) for name in ['Szymon Balawajder'] }
-    male_dict = { name : get_list_of_points_for_athlete(name, True, 27) for name in ['Szymon Balawajder']}
-    # df_male = 
-    # female_dict = { name : get_list_of_points_for_athlete(name, False,27) for name in F_UNIQUE_NAMES }
-    # a = get_list_of_points_for_athlete('Szymon Balawajder', True, 27)
-    print(male_dict)
-    # print(female_dict)
-    # df.to_csv()
-    # 
     
     
         
