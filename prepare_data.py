@@ -1,6 +1,3 @@
-# Input: 1 html file 
-# Output: 2 csv files {sex}{day}
-# 
 import os, glob
 
 from bs4 import BeautifulSoup 
@@ -117,10 +114,8 @@ def create_main_csv(male: bool, max_value: int):
 
 if __name__ == '__main__':
 
-
     # convert data from html files to csv files
     convert_html2csv()
-    
     
     # use small csv files (per day) to create main csv
     create_main_csv(True, 29)
