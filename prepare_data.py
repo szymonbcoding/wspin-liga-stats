@@ -3,7 +3,7 @@ import os, glob
 from bs4 import BeautifulSoup 
 import pandas as pd
 
-from algorithms import get_samples_rectangular_growth
+from algorithms import generate_transitional_growth
 
 def open_html_file(path: str):
     """
@@ -84,7 +84,7 @@ def estimate_transitional_values(values_list: list):
             break
         start_value = values_list[index]
         stop_value = values_list[index+1]
-        new_list = get_samples_rectangular_growth(start_sample=start_value, stop_sample=stop_value)
+        new_list = generate_transitional_growth(start_sample=start_value, stop_sample=stop_value)
         huge_values_list.extend(new_list)
         
     huge_values_list.append(values_list[-1])

@@ -1,6 +1,6 @@
 import numpy as np
 
-FRAMES_PER_SECOND = 24
+SAMPLES_PER_DAY = 24
 
 #  fpgg  |            spgg
 #         ______________________________
@@ -29,13 +29,12 @@ def get_samples_step_function(start_sample: int, stop_sample: int) -> list[float
 # |
 # |
 
-# get_samples_rectangular_growth(0,100) ->
+# generate_transitional_growth(0,100) ->
 #[ 0.    4.17  8.33 12.5  16.67 20.83 25.   29.17 33.33 37.5  41.67 45.83
 # 50.   54.17 58.33 62.5  66.67 70.83 75.   79.17 83.33 87.5  91.67 95.83] 
-def get_samples_rectangular_growth(start_sample: int, stop_sample: int):
+def generate_transitional_growth(start_sample: int, stop_sample: int):
     overall_growth: int = stop_sample - start_sample
-    gradual_growth: float = overall_growth / FRAMES_PER_SECOND
+    gradual_growth: float = overall_growth / SAMPLES_PER_DAY
 
-    # growth_list = np.fromiter((round(start_sample + x * gradual_growth, 2) for x in range(FRAMES_PER_SECOND)), float)
-    growth_list = [round(start_sample + x * gradual_growth, 2) for x in range(FRAMES_PER_SECOND)]
+    growth_list = [round(start_sample + x * gradual_growth, 2) for x in range(SAMPLES_PER_DAY)]
     return growth_list
