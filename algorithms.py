@@ -1,5 +1,3 @@
-import time
-
 import numpy as np
 
 FRAMES_PER_SECOND = 24
