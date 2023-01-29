@@ -6,7 +6,7 @@ import os, glob
 from bs4 import BeautifulSoup 
 import pandas as pd
 
-from functions import get_samples_step_function
+from algorithms import get_samples_step_function
 
 def open_html_file(path: str):
     """
