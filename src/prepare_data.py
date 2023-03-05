@@ -111,16 +111,6 @@ def create_main_csv(male: bool, max_value: int):
     else:
         df_i.to_csv("data/main_csv/f.csv", index=False)
 
-
-if __name__ == '__main__':
-
-    # convert data from html files to csv files
-    convert_html2csv()
-    
-    # use small csv files (per day) to create main csv
-    create_main_csv(True, 29)
-    create_main_csv(False, 29)
-
     
     
         

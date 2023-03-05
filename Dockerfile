@@ -8,6 +8,6 @@ ADD .env ./
 
 RUN pip3 install -r requirements.txt
 
-ADD scrapper.py ./
+ADD src/scrapper.py ./
 
 CMD ["python3", "./scrapper.py"]

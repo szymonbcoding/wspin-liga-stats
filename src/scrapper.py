@@ -57,10 +57,10 @@ if __name__ == '__main__':
     firebase_config = configure_firebase()
     
     scheduler = BlockingScheduler()
-    scheduler.add_job(some_job, 'interval', minutes = 5)
+    scheduler.add_job(some_job, 'interval', minutes = 60)
     scheduler.start()
     
-    # do job once a 5 minutes
+    # do job once a 60 minutes
     some_job(config = firebase_config)
 
     
