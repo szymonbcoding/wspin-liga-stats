@@ -3,7 +3,7 @@ import os, glob
 from bs4 import BeautifulSoup 
 import pandas as pd
 
-from algorithms import generate_transitional_growth
+from src.algorithms import generate_transitional_growth
 
 def open_html_file(path: str):
     """
